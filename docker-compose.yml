@@ -15,7 +15,7 @@ services:
       - db      
     ports:
       - 1337:1337      
-    command: npm run start
+    command: npm run develop
     volumes:
       - ./cms:/usr/src/app
       - /usr/src/app/node_modules
