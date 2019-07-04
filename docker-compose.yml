@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  cms:
+    build:
+      context: ./cms
+    environment:
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      DATABASE_NAME: db_strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi  
+    depends_on:
+      - db      
+    ports:
+      - 1337:1337      
+    command: npm run start
+    volumes:
+      - ./cms:/usr/src/app
+      - /usr/src/app/node_modules
+
+  db:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=db_strapi
+      - MYSQL_USER=strapi
+      - MYSQL_PASSWORD=strapi
+      - MYSQL_ROOT_PASSWORD=strapiroot
+      - TZ=UTC
+    volumes:
+      - ./mysql8.0/conf.d:/etc/mysql/conf.d:ro
+      - ./mysql8.0/logs:/var/log/mysql:rw
+      - ./mysql8.0/initdb.d:/docker-entrypoint-initdb.d:ro
+      - ./common:/app:ro
+
+  api:
+    build:
+      context: ./api
+    ports:
+      - 3000:3000      
+    command: jovo run --watch
+    volumes:
+      - ./api:/usr/src/app
+      - /usr/src/app/node_modules
