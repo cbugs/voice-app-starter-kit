@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/invocations",
+      "handler": "Invocation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/invocations/count",
+      "handler": "Invocation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/invocations/:id",
+      "handler": "Invocation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/invocations",
+      "handler": "Invocation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/invocations/:id",
+      "handler": "Invocation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/invocations/:id",
+      "handler": "Invocation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

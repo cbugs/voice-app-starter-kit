@@ -1,0 +1,20 @@
+{
+  "connection": "default",
+  "collectionName": "invocations",
+  "info": {
+    "name": "invocation",
+    "description": "invocation messages"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Response": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}
