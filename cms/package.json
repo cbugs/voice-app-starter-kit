@@ -22,7 +22,7 @@
     "lodash": "^4.17.5",
     "mysql": "^2.17.1",
     "sqlite3": "^4.0.9",
-    "strapi": "3.0.0-beta.8",
+    "strapi": "3.0.0-beta.17.8",
     "strapi-admin": "3.0.0-beta.8",
     "strapi-hook-bookshelf": "3.0.0-beta.8",
     "strapi-hook-knex": "3.0.0-beta.8",
